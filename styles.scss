@@ -1,0 +1,168 @@
+﻿body{
+    margin: 0px;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+input {
+    font-size: 16px;
+    width: 300px;
+    padding: 13px 0;
+    /* Parent selector = & */
+    &:focus {
+        outline: none;
+    }
+
+    &[type="text"] {
+        /* Give input text a lighter color */
+        color: #464646;
+        margin: 0 0 0 5px;
+    }
+
+    &[type="submit"] {
+        font-size: 14px;
+        width: 185px;
+        /* Remove border */
+        border-width: 0px;
+        border-radius: 15px;
+        margin: 20px;
+
+        &:hover {
+            /* Add box-shadow when hovering button (border adds space) */
+            box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8);
+        }
+    }
+
+    &.blue-button {
+        background-color: dodgerblue;
+        color: white;
+        font-size: smaller;
+        max-width: 200px;
+        border-radius: 0px;
+        border: 1px solid #156bbd;
+        float: right;
+        padding: 10px 2px;
+        margin: 0;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+
+    a {
+        color: black;
+        padding: 10px;
+        text-decoration: none;
+    }
+
+    &-advanced {
+        @extend .header;
+        background-color: #f1f1f1;
+        height: 50px;
+    }
+
+    &-advanced-logo {
+        @extend .header;
+        padding: 10px;
+
+        img {
+            height: 30px;
+        }
+    }
+
+    &-links {
+        @extend .header;
+        margin-left: auto;
+    }
+}
+
+.appbar {
+    margin: 30px 10px;
+
+    label {
+        color: #d93025;
+        font-size: 20px;
+        margin: 50px 30px;
+    }
+}
+.separator-line {
+    border-bottom: solid 1px #d6d6d6;
+}
+
+.search-container {
+    $input_field_border_radius: 25px;
+    display: flex;
+    flex-direction: column;
+    /* Align the search container in the center of the viewport */
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+
+    .search-field {
+        display: flex;
+        flex-direction: row;
+        border-radius: $input_field_border_radius;
+        border: 1px solid #afafaf;
+        align-items: center;
+        margin: 10px;
+        padding-left: 15px;
+
+        input {
+            border: none;
+            border-radius: $input_field_border_radius;
+        }
+    }
+
+    .logo-subtext {
+        color: #4285f4;
+        position: relative;
+        left: 110px;
+        top: -18px;
+    }
+}
+.advanced-search-container {
+    margin: 50px 40px;
+
+    label {
+        display: inline-block;
+        width: 16%;
+        font-size: 20px;
+    }
+
+    .whitespace {
+        display: inline-block;
+        width: 50%;
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        padding: 10px 0;
+
+        label {
+            width: 16%;
+            font-size: 14px;
+        }
+
+        input[type="text"] {
+            width: 49%;
+            padding: 2px 0;
+        }
+
+        .clarification {
+            font-size: 11px;
+            width: 30%;
+            margin-left: 1%;
+
+            .monospace {
+                font-family: monospace;
+            }
+        }
+
+        .right-align {
+            width: 50%;
+        }
+    }
+}
